@@ -64,7 +64,7 @@
             float: left;
             cursor: pointer;
             font-size:30px;
-            font-family:'Times New Roman', Times, serif;
+            font-family: 'Times New Roman', Times, serif
         }
 
             .tab button:hover {
@@ -92,7 +92,7 @@
     }
 
     .tablinks-edu {
-        background-color: lightskyblue;
+        background-color: beige;
         width: 25%;
         height: 110%;
         /*width: 110px;
@@ -107,7 +107,7 @@
     }
 
     .tablinks-work {
-        background-color: skyblue;
+        background-color: beige;
         width: 25%;
         height: 110%;
         /*width: 110px;
@@ -123,7 +123,7 @@
     }
 
     .tablinks-skills {
-        background-color: lightsteelblue;
+        background-color: beige;
         width: 25%;
         height: 110%;
         /*width: 110px;
@@ -139,7 +139,7 @@
         /*margin-bottom: 20px;*/
     }
     .tablinks-portfolio {
-        background-color: lightblue;
+        background-color: beige;
         width: 25%;
         height: 110%;
         /*width: 110px;
@@ -198,16 +198,17 @@
     }
 
         .downloadCV button {
-            background-color: springgreen;
-            border:none;
-            margin-left: 350px;
-            padding: 100px 100px;
+            background-color: palegreen;
+            position:center;
+            padding: 80px 80px;
             /*width: 50%;
             height: 50%;*/
             border-radius: 50px;
-            font-size: 30px;
+            font-size: 35px;
             cursor: pointer;
-            border-color: black;
+            border:none;
+            margin-top:20px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
         .downloadCV a {
@@ -216,16 +217,17 @@
 
     .downloadbtn:hover {
         background-color: gold;
+        color:red;
     }
 
     .flip-container {
-        display:flex;
-        flex-direction:row;
+        display: flex;
+        flex-direction: row;
         /*display: grid;
         grid-template-columns: repeat(3,1fr);*/
         background-color: transparent;
         margin-top: 100px;
-        align-items:center;
+        /*align-items:center;*/
     }
 
     .flip-master {
@@ -259,7 +261,7 @@
 
     .flip-master-front {
         border-radius: 100px;
-        background-color: lightgreen;
+        background-color: rosybrown;
         color: black;
     }
 
@@ -271,7 +273,7 @@
 
     .flip-master-back {
         border-radius: 100px;
-        background-color: lightseagreen;
+        background-color: navajowhite;
         color: black;
         transform: rotateY(180deg);
     }
@@ -317,7 +319,7 @@
 
     .flip-uni-front {
         border-radius: 100px;
-        background-color: lightgreen;
+        background-color: sandybrown;
         color: black;
     }
 
@@ -329,7 +331,7 @@
 
     .flip-uni-back {
         border-radius: 100px;
-        background-color: lightseagreen;
+        background-color: navajowhite;
         color: black;
         transform: rotateY(180deg);
     }
@@ -375,7 +377,7 @@
 
     .flip-stpm-front {
         border-radius: 100px;
-        background-color: lightgreen;
+        background-color: indianred;
         color: black;
     }
 
@@ -387,7 +389,7 @@
 
     .flip-stpm-back {
         border-radius: 100px;
-        background-color: lightseagreen;
+        background-color: navajowhite;
         color: black;
         transform: rotateY(180deg);
     }
@@ -409,13 +411,21 @@
 
     .collapsible {
         width: 100%;
-        background-color: mediumspringgreen;
+        background-color: GREY;
         margin-top: 10px;
         border: none;
         color: black;
         cursor: pointer;
         text-align: left;
-        font-size: 20px;
+        font-size: 25px;
+    }
+    .PAH{
+        background-color: navy;
+        color:white;
+    }
+    .collapsible.PAH:hover{
+        color:red;
+        background-color:gold;
     }
 
         .collapsible i {
@@ -425,7 +435,8 @@
         }
 
         .collapsible:hover {
-            background-color: gold;
+            background-color: orangered;
+            color:white;
         }
 
         .collapsible i:after {
@@ -433,7 +444,7 @@
             font-style: normal;
             float: inline-end;
             margin-left: 10px;
-            font-size: 15px;
+            font-size: 20px;
         }
 
         .collapsible.active i:after {
@@ -441,7 +452,7 @@
             font-style: normal;
             float: inline-end;
             margin-left: 10px;
-            font-size: 15px;
+            font-size: 20px;
         }
 
     .workContent {
@@ -461,26 +472,37 @@
             margin-right: 10px;
             margin-top: 0px;
             background-color: transparent;
-            font-size: 20px;
+            font-size: 25px;
         }
 
         .workContent ol {
             list-style-type: decimal;
             margin-top: 0px;
             margin-bottom: 5px;
-            font-size: 20px;
+            /*font-size: 20px;*/
             background-color: transparent;
         }
 
             .workContent ol li {
                 background-color: transparent;
+                font-size: 25px;
             }
 
             .workContent ol ul {
-                font-size: 15px;
                 list-style-type: circle;
                 margin-top: 0px;
                 background-color: transparent;
+                line-height: 1.5;
+            }
+            .workContent ol b {
+                background-color: transparent;
+            }
+            .workContent ol i {
+                background-color: transparent;
+            }
+            .workContent ol ul li {
+                /*background-color: transparent;*/
+                font-size: 20px;
             }
 
     .skills-content {
@@ -531,50 +553,6 @@
         background-color:deepskyblue;
     }
 
-    /*.educontent-uni {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        background-color: lightgray;
-    }
-
-    .educontent-uni-time {
-        background-color: lightgray;
-    }
-        .educontent-uni-time h4{
-            background-color:lightgray;
-            margin-left:30px;
-        }
-        .educontent-uni-time p {
-            background-color: lightgray;
-            margin-left: 30px;
-            margin-top: 0;
-            font-size: 20px;
-            color: black;
-        }
-    .educontent-uni-content {
-        border:none;
-        background-color: black;
-    }
-        .educontent-uni-content h4 {
-            background-color:lightgray;
-        }
-        .educontent-uni-content b {
-            background-color: lightgray;
-            margin-top: 0;
-            margin-left: 0;
-            font-size: 20px;
-            line-height: 1.00;
-        }
-        .educontent-uni-content p {
-            background-color: lightgray;
-            text-align: left;
-            margin-left: 0;
-            margin-top: 0;
-            font-size: 20px;
-            color: black;
-            line-height: 1.00;
-        }*/
-
     .contactgrid {
         display: flex;
         /*float: right;*/
@@ -593,7 +571,7 @@
         margin-top: 50px;
         height: 25%;
         /*background-color: transparent;*/
-        background-color: navajowhite;
+        background-color: ;
         /*border-radius:20px;*/
     }
     .image {
@@ -640,7 +618,7 @@
             text-align: center;
             font-size: 50px;
         }
-    .aboutMe p {
+        .aboutMe p {
         background-color: transparent;
         text-align: left;
         margin-left: 10px;
@@ -651,7 +629,9 @@
         line-height:1.5;
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     }    
-
+        .aboutMe b{
+            background-color:transparent;
+        }
 </style>
 <body>
         <div class="main-content">
@@ -736,14 +716,14 @@
                 <div id="Working" class="tabcontent">
                     <h2>Working Experience</h2>
                     <div class="collapsible-content">
-                        <button class="collapsible" onclick="toggleContent('PAH')">IT Project Executive<i>2023 Sep - Present</i></button>
+                        <button class="collapsible PAH" onclick="toggleContent('PAH')">IT Project Executive<i>2023 Sep - Present</i></button>
                         <div id="PAH" class="workContent">
                             <h5>
                                 Penang Adventist Hospital
                             </h5>
                             <ol>
                                 <li>
-                                    Project Management
+                                    <b>Project Management</b>
                                 </li>
                                 <ul>
                                     <li>
@@ -766,7 +746,7 @@
                                     </li>
                                 </ul>
                                 <li>
-                                    System Testing
+                                    <b>System Testing</b>
                                 </li>
                                 <ul>
                                     <li>
@@ -796,7 +776,7 @@
                             </h5>
                             <ol>
                                 <li>
-                                    Reliability Analysis
+                                    <b>Reliability Analysis</b>
                                 </li>
                                 <ul>
                                     <li>
@@ -816,7 +796,7 @@
                                     </li>
                                 </ul>
                                 <li>
-                                    Project Management
+                                    <b>Project Management</b>
                                 </li>
                                 <ul>
                                     <li>
@@ -847,11 +827,11 @@
                             </h5>
                             <ol>
                                 <li>
-                                    Quality control in Raw Material, Packaging Material, Bulk Product, Finished Goods.
+                                    <b>Quality control </b>
                                 </li>
                                 <ul>
                                     <li>
-                                        Ensure on-time analyses on products in line with analytical protocol
+                                        Ensure on-time analyses on products <i>(Raw Material, Packaging Material, Bulk Product, Finished Goods)</i> in line with analytical protocol
                                     </li>
                                     <li>
                                         Data collection and analysis for product quality compliance and
@@ -872,7 +852,7 @@
                                     </li>
                                 </ul>
                                 <li>
-                                    Research and Development
+                                    <b>Research and Development</b>
                                 </li>
                                 <ul>
                                     <li>
@@ -948,7 +928,7 @@
         <div class="contactgrid">
             <div class="imagecontact">
                 <div class="image">
-                    <img src="OoiChiaYi.jpg">
+                    <img src="/Users/chiayicy/Projects/Resume/OoiChiaYi.jpg">
                 </div>
                 <div class="socialbuttons">
                     <i class="fa-solid fa-phone" style="background-color:transparent;color:black"><a>+601136000525</a></i>
@@ -961,12 +941,12 @@
             <div class="aboutMe">
                 <h2>About Me</h2>
                 <p>
-                    I am a dynamic professional with a Master's in Data Science and
+                    I am a dynamic professional with a <b>Master's in Data Science and Analytics</b> and
                     a proven track record in utilizing data analysis skills to enhance product quality and streamline processes.<br />
-                    My expertise lies in conducting root cause analysis and implementing testing, particularly in the domains of quality and reliability.<br />
+                    My expertise lies in conducting <b>root cause analysis and implementing testing, particularly in the domains of quality and reliability.</b><br />
                     In my current role as an IT Project Executive in the healthcare industry,
                     I specialize in seamlessly integrating applications with Health Information Systems (HIS). <br />
-                    Committed to delivering innovative solutions, I am passionate about contributing to the ever-evolving landscape of healthcare technology.
+                    Committed to delivering innovative solutions, I am passionate about leverage my data analysis skills and contribute to organizational success.
                 </p>
             </div>
         </div>
