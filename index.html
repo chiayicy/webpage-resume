@@ -554,24 +554,25 @@
     }
 
     .contactgrid {
-        display: flex;
+        display: grid;
         /*float: right;*/
-        flex-direction: column;
-        flex-wrap:wrap;
+        /*flex-direction: row;
+        flex-wrap: wrap;*/
+        grid-template-rows: 1fr 2fr;
         width: 100%;
         color: black;
-        /*background-color:navajowhite;*/
         /*border-radius: 100px;*/
         text-align: center;
         /*align-items: center;*/
+        /*background-color: blue;*/
     }
     .imagecontact {
         display: grid;
         grid-template-columns: 1fr 2fr;
         margin-top: 50px;
         height: 25%;
-        /*background-color: transparent;*/
-        background-color: ;
+        background-color:transparent;
+        margin-bottom:0px;
         /*border-radius:20px;*/
     }
     .image {
@@ -593,7 +594,7 @@
         text-align: left;
         margin-top:20px;
         margin-right: 0px;
-        margin-left: 0px;
+        margin-left: 10px;
     }
 
         .socialbuttons a {
@@ -604,11 +605,15 @@
             color:black;
         }
     .aboutMe {
+        width: 100%;
+        height: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /*flex-direction: column;*/
         background-color: navajowhite;
         text-align: center;
-        margin-top:20px;
+        /*margin-top: -100px;*/
         /*background-color:navajowhite;
         border-radius: 100px;*/
     }
@@ -617,20 +622,29 @@
             background-color: transparent;
             text-align: center;
             font-size: 50px;
+            margin-top: 15px;
+            text-align: center;
+            width: 100%;
+            height: 10%;
+            margin-bottom:0px;
+            /*border-top-right-radius:20px;*/
         }
         .aboutMe p {
-        background-color: transparent;
-        text-align: left;
-        margin-left: 10px;
-        font-size:20px;
-        color:indianred;
-        text-align:left;
-        margin-top:0px;
-        line-height:1.5;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-    }    
-        .aboutMe b{
-            background-color:transparent;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            text-align: left;
+            /*margin-left: 10px;*/
+            font-size: 22px;
+            color: indianred;
+            text-align: left;
+            line-height: 1.5;
+            margin-left: 10px;
+            /*-top: -50px;*/
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+        .aboutMe b {
+            background-color: transparent;
         }
 </style>
 <body>
@@ -943,9 +957,11 @@
                 <p>
                     I am a dynamic professional with a <b>Master's in Data Science and Analytics</b> and
                     a proven track record in utilizing data analysis skills to enhance product quality and streamline processes.<br />
+                    <br />
                     My expertise lies in conducting <b>root cause analysis and implementing testing, particularly in the domains of quality and reliability.</b><br />
                     In my current role as an IT Project Executive in the healthcare industry,
                     I specialize in seamlessly integrating applications with Health Information Systems (HIS). <br />
+                    <br />
                     Committed to delivering innovative solutions, I am passionate about leverage my data analysis skills and contribute to organizational success.
                 </p>
             </div>
