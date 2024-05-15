@@ -10,165 +10,100 @@
 </head>
 <style>
     * {
-        background-color:whitesmoke;
+      background-color: floralwhite;
+      margin:0;
+      padding:0;
     }
 
     body {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-gap:15px;
-        /*grid-template-areas:'tab contentgrid contactgrid'*/
+        display: flex;
+        flex-direction:column;
+        min-height:100vh;
+        min-width:100vw;
+        margin:0;
+        scroll-margin-right:0px;
+        padding:0
     }
 
-    .grid-item {
-        background-color: white;
-        /*margin-left: 0px;*/
-        /*margin-right: 20px;*/
-    }
-        .main-content {
-            display: flex;
-            flex-direction:row;
-            flex-wrap:wrap;
-            height:100vh;
-            margin-top:20px;
-        }
-    .contentgrid {
-        display: grid;
-        grid-template-columns:1fr;
-        grid-template-rows:10% 90%;
-        margin-top: 0px;
-        margin-left: 50px;
-        /*margin-bottom: 10px;*/
-        height: 100%;
-        background-color:whitesmoke;
+    header {
+        color: darkred;
+        font-size: 50px;
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        font-weight: bold;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        /*flex-direction: column;*/
+        height: 10%;
+        background-color: floralwhite;
+        z-index: 1000; /* Ensure header is above other content */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     .tab {
-        display: flex;
-        flex-direction: row;
-        background-color: whitesmoke;
-        border-radius: 50px;
         width: 100%;
-        height: 100%;
-        margin-top: 30px;
-        margin-bottom: 10px;
-        z-index: 2;
-        position: static;
-        /*flex-direction: column;*/
+        position: fixed;
+        background-color: floralwhite;
     }
 
         .tab button {
-            margin-left: 0px;
-            font-size: 20px;
-            float: left;
+            right:30%;
+            float: right;
+            font-size: 15px;
             cursor: pointer;
-            font-size:30px;
-            font-family: 'Times New Roman', Times, serif
+            color: black;
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+            word-wrap: anywhere;
         }
 
             .tab button:hover {
-                background-color: gold;
-                color: red;
+                color: darkred;
+                font-size: large;
+                text-decoration: underline;
             }
 
-            .tab button.active {
-                background-color: rosybrown;
-            }
-
-    .tab i {
-        font-size: 50px;
-        background-color: transparent;
-        margin-right:10px;
-    }
-
-    .floating-button{
-        position:relative;
-        transition: transform 0.3s ease
-    }
-
-    .float{
-        transform: translateY(-20px);
-    }
-
-    .tablinks-edu {
-        background-color: beige;
-        width: 25%;
-        height: 110%;
-        /*width: 110px;
-        height: 110px;*/
-        border-radius: 20px;
-        /*border-top-left-radius: 20px;
-        border-top-right-radius: 20px;*/
-        border: none;
-        margin-right: 10px;
-        margin-top: -25px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .tablinks-work {
-        background-color: beige;
-        width: 25%;
-        height: 110%;
-        /*width: 110px;
-        height: 110px;*/
-        border-radius: 20px;
-        /*border-top-left-radius: 20px;
-        border-top-right-radius: 20px;*/
-        border: none;
-        margin-left: 0px;
-        margin-right: 10px;
-        margin-top: -25px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .tablinks-skills {
-        background-color: beige;
-        width: 25%;
-        height: 110%;
-        /*width: 110px;
-        height: 110px;*/
-        border-radius: 20px;
-        /*border-top-left-radius: 20px;
-        border-top-right-radius: 20px;*/
-        border: none;
-        margin-left: 0px;
-        margin-right: 10px;
-        margin-top: -25px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        /*margin-bottom: 20px;*/
-    }
-    .tablinks-portfolio {
-        background-color: beige;
-        width: 25%;
-        height: 110%;
-        /*width: 110px;
-        height: 110px;*/
-        border-radius: 20px;
-        /*border-top-left-radius: 20px;
-        border-top-right-radius: 20px;*/
-        border: none;
-        margin-top: -25px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-
-    .tabcontent {
-        width: 100%;
-        height: 100%;
-        background-color: whitesmoke;
-        border-bottom-left-radius: 100px;
-        border-bottom-right-radius: 100px;
-        margin-top:50px;
-        position: relative;
-        display: none;
-        /*z-index: 1;*/
-    }
-
-        .tabcontent.active {
-            display: block;
+        .tab i {
+            font-size: 15px;
+            background-color: transparent;
+            margin-right: 10px;
         }
 
+    .floating-button {
+        position: relative;
+        transition: transform 0.3s ease;
+        background-color: transparent;
+        width: 10%;
+        height: 100%;
+        border: none;
+        margin-right: 0px;
+        margin-top: 20px;
+    }
+
+        .floating-button.underline {
+            text-decoration: underline;
+            color: darkred;
+            font-weight: bold;
+            font-size: large;
+        }
+
+    .tablinks-aboutme.active {
+        text-decoration: underline;
+        color: darkred;
+        font-weight: bold;
+        font-size: large;
+    }
+
+    .floating {
+        transform: translateY(-10px);
+    }
+
+    .tabcontent {
+        min-width: 100vw;
+        height: 100vh;
+        position: relative;
+        margin:0;
+        padding:0;
+    }
         .tabcontent h2 {
             background-color: transparent;
             font-size: 50px;
@@ -179,36 +114,316 @@
 
         .tabcontent p {
             background-color: transparent;
-            margin-left: 100px;
-            width: 80%;
-            color: firebrick;
+            color: black;
             line-height: 2.0;
             font-size: 20px;
             text-align: start;
         }
-    .aboutMe-portfolio {
-        display: flex;
-        flex-direction: column;
+
+        .tabcontent.active {
+            display: block;
+        }
+        .aboutme{
+            box-sizing:border-box;
+            width:100%;
+        }
+
+    .aboutme-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .image_grad {
+        width: 100%;
+        height: 100%;
         background-color: transparent;
     }
 
-    .downloadCV {
+        .image_grad img {
+            float:right;
+            width: 300px;
+            height: 450px;
+            margin-right: 30px;
+        }
+    .aboutme-intro {
         background-color: transparent;
-        white-space: nowrap;
+        width: 100%;
+        color: black;
+        text-align: center
+    }
+    .vertical-timeline {
+        position: absolute
     }
 
-        .downloadCV button {
+    .timeline {
+        top:50px;
+        list-style: none;
+        width: 100%;
+        position: relative;
+        background-color: transparent;
+    }
+
+        .timeline:before {
+            top: -50px;
+            bottom: -100px;
+            position: absolute;
+            content: "";
+            width: 5px;
+            background-color: lightgrey;
+            left: 50%;
+        }
+
+    .timeline-item {
+        position: relative;
+        background-color: transparent;
+    }
+
+        .timeline-item:before, .timeline-item:after {
+            content: "";
+            display: table;
+        }
+
+        .timeline-item:after {
+            clear: both;
+        }
+    .timeline-badge {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        text-align: center;
+        position: relative;
+        left: 48%;
+        border: none;
+        z-index: 100;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        color: white;
+        top: 80px;
+        background-color: firebrick;
+    }
+
+    .timeline-panel-left {
+        bottom: 150px;
+        position: relative;
+        width: 40%;
+        left: 5%;
+        float: left;
+        border: 2px dotted lightgrey;
+        border-radius: 2px;
+        -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.175);
+        box-shadow: 0 10px 6px rgba(0, 0, 0, 0.175);
+    }
+    .diploma{
+        top:-100px;
+    }
+    .degree{
+        top:-100px;
+    }
+    .master{
+        top:50px
+    }
+    
+        .timeline-panel-left:before {
+            position: absolute;
+            top: 45%;
+            right: -22px;
+            display: inline-block;
+            border-top: 16px solid transparent;
+            border-left: 16px solid grey;
+            border-right: 0 solid grey;
+            border-bottom: 16px solid transparent;
+            content: " ";
+        }
+
+    .timeline-edu {
+        margin-top: 10px;
+        margin-right: 10px;
+        color: brown;
+        font-size: 20px;
+    }
+    .timeline-panel-left h4 {
+        color: brown;
+        font-size: 20px;
+        text-align: right;
+    }
+
+    .timeline-panel-left p {
+        color: black;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: right;
+    }
+
+
+    .timeline-panel-right {
+        bottom: 150px;
+        position: relative;
+        width: 45%;
+        float: right;
+        right: 0%;
+        border: 2px dotted lightgrey;
+        border-radius: 2px;
+        -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.175);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.175);
+    }
+        .timeline-panel-right:before {
+            position: absolute;
+            top: 45%;
+            left: -22px;
+            display: inline-block;
+            border-top: 16px solid transparent;
+            border-left: 0px solid grey;
+            border-right: 16px solid grey;
+            border-bottom: 16px solid transparent;
+            content: " ";
+        }        
+
+    .timeline-panel-wrapper{
+        max-height:300px;
+        overflow-y:auto;
+    }
+    .zhulian{
+        top:50px;
+    }
+    .lumileds{
+        top:50px;
+    }
+    .adventist{
+        top:100px;
+    }
+
+    .timeline-panel-right h4 {
+        margin-top: 10px;
+        float: left;
+        margin-left: 10px;
+        color: brown;
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+
+    .timeline-panel-right p {
+        margin-top: 20px;
+        float: right;
+        margin-left: 10px;
+        color: black;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: initial;
+    }
+    .timeline-body button {
+        background-color: lightseagreen;
+        font-size: large;
+        width: 100%;
+        cursor: pointer;
+        color: white;
+        border: none;
+    }
+
+        .timeline-body button:hover {
+            background-color: gold;
+            color: red;
+        }
+
+    .courses-content {
+        display: none;
+    }
+
+        .courses-content li {
+            line-height: 1.5;
+            font-size: 18px;
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+            color: brown;
+        }
+
+    .skills-content {
+        background-color: transparent;
+        padding-left: 10px;
+        padding-right: 10px;
+        position:relative;
+    }
+    .skills-content span{
+        background-color:transparent;
+    }
+.visualization{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    grid-gap:10px;
+}
+    .code {
+        padding: 20px;
+        border-radius: 30px;
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        text-align: center;
+        margin-bottom: 20px;
+        -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.175);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.175);
+    }
+    .PowerBI {
+        background-color: darkkhaki;
+        color: white;
+        font-size: 80px;
+        border-radius: 40px;
+    }
+    .Tableau {
+        background-color: blanchedalmond;
+        font-size: 50px;
+        text-align: center;
+        align-content: center;
+    }
+    .coding {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin-top:0px;
+        grid-gap:10px;
+    }
+    .sql-r {
+        display: grid;
+        grid-template-rows: repeat(2,1fr);
+        grid-gap: 0px;
+        font-size: 30px;
+    }
+    .sql {
+        background-color: blanchedalmond;
+    }
+    .R {
+        background-color: blanchedalmond;
+    }
+    .r-html {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 10px;
+    }
+    .html {
+        background-color: blanchedalmond;
+    }
+
+    .code-python {
+        background-color: darkkhaki;
+        color: white;
+        text-align: center;
+        align-content: center;
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+        font-size: 100px;
+        border-radius: 50px;
+        -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    }
+        .portfolio{
+            text-align:center;
+        }
+
+        .portfolio button {
             background-color: palegreen;
-            position:center;
-            padding: 80px 80px;
-            /*width: 50%;
-            height: 50%;*/
+            padding:10px 80px;
             border-radius: 50px;
             font-size: 35px;
             cursor: pointer;
-            border:none;
-            margin-top:20px;
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
         }
 
         .downloadCV a {
@@ -217,754 +432,423 @@
 
     .downloadbtn:hover {
         background-color: gold;
-        color:red;
+        color: red;
     }
-
-    .flip-container {
-        display: flex;
-        flex-direction: row;
-        /*display: grid;
-        grid-template-columns: repeat(3,1fr);*/
+    .footer {
+        background-color: lightgray;
+        color: white;
+        text-align: center;
+        position: fixed;
+        height: 10%;
+        transition: bottom 0.1s;
+        z-index: 1000;
+    }
+        .footer.show {
+            bottom: 0;
+        }
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 30px;
         background-color: transparent;
-        margin-top: 100px;
-        /*align-items:center;*/
-    }
-
-    .flip-master {
-        background-color: whitesmoke;
-        width:30%;
-        height: 250px;
-        margin-left: 100px;
-        perspective: 1000px;
-    }
-
-    .flip-master-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        border-radius: 100px;
         text-align: center;
-        transition: transform 1.0s;
-        transform-style: preserve-3d;
+        margin-top: 20px;
     }
-
-    .flip-master:hover .flip-master-inner {
-        transform: rotateY(180deg)
-    }
-
-    .flip-master-front, .flip-master-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-    }
-
-    .flip-master-front {
-        border-radius: 100px;
-        background-color: rosybrown;
-        color: black;
-    }
-
-        .flip-master-front h3 {
-            font-size: 30px;
-            margin-top: 100px;
-            background-color: transparent;
-        }
-
-    .flip-master-back {
-        border-radius: 100px;
-        background-color: navajowhite;
-        color: black;
-        transform: rotateY(180deg);
-    }
-
-        .flip-master-back p {
-            background-color: transparent;
-            text-align: center;
-            white-space: nowrap;
-            margin-left: 30px;
+        .footer-content a {
+            text-decoration: underline;
             font-size: 25px;
+            background-color: transparent;
             color: black;
-            line-height: 2.00;
-        }
-
-    .flip-uni {
-        background-color: whitesmoke;
-        width: 30%;
-        height: 250px;
-        margin-left: 30px;
-        perspective: 1000px;
-    }
-
-    .flip-uni-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        border-radius: 100px;
-        text-align: center;
-        transition: transform 1.0s;
-        transform-style: preserve-3d;
-    }
-
-    .flip-uni:hover .flip-uni-inner {
-        transform: rotateY(180deg)
-    }
-
-    .flip-uni-front, .flip-uni-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-    }
-
-    .flip-uni-front {
-        border-radius: 100px;
-        background-color: sandybrown;
-        color: black;
-    }
-
-        .flip-uni-front h4 {
-            font-size: 30px;
-            margin-top: 100px;
-            background-color: transparent;
-        }
-
-    .flip-uni-back {
-        border-radius: 100px;
-        background-color: navajowhite;
-        color: black;
-        transform: rotateY(180deg);
-    }
-
-        .flip-uni-back p {
-            background-color: transparent;
-            text-align: center;
-            margin-left: 30px;
-            font-size: 25px;
-            color: black;
-            line-height: 2.00;
-        }
-
-    .flip-stpm {
-        background-color: whitesmoke;
-        width: 30%;
-        height: 250px;
-        margin-left: 30px;
-        margin-right: 100px;
-        perspective: 1000px;
-    }
-
-    .flip-stpm-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        border-radius: 100px;
-        text-align: center;
-        transition: transform 1.0s;
-        transform-style: preserve-3d;
-    }
-
-    .flip-stpm:hover .flip-stpm-inner {
-        transform: rotateY(180deg)
-    }
-
-    .flip-stpm-front, .flip-stpm-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-    }
-
-    .flip-stpm-front {
-        border-radius: 100px;
-        background-color: indianred;
-        color: black;
-    }
-
-        .flip-stpm-front h4 {
-            font-size: 30px;
-            margin-top: 100px;
-            background-color: transparent;
-        }
-
-    .flip-stpm-back {
-        border-radius: 100px;
-        background-color: navajowhite;
-        color: black;
-        transform: rotateY(180deg);
-    }
-
-        .flip-stpm-back p {
-            background-color: transparent;
-            text-align: center;
-            margin-left: 30px;
-            font-size: 25px;
-            color: black;
-            line-height: 2.00;
-        }
-
-    .collapsible-content {
-        display: flex;
-        flex-direction: column;
-        background-color: transparent;
-    }
-
-    .collapsible {
-        width: 100%;
-        background-color: GREY;
-        margin-top: 10px;
-        border: none;
-        color: black;
-        cursor: pointer;
-        text-align: left;
-        font-size: 25px;
-    }
-    .PAH{
-        background-color: navy;
-        color:white;
-    }
-    .collapsible.PAH:hover{
-        color:red;
-        background-color:gold;
-    }
-
-        .collapsible i {
-            background-color: transparent;
-            float: right;
-            margin-right: 10px;
-        }
-
-        .collapsible:hover {
-            background-color: orangered;
-            color:white;
-        }
-
-        .collapsible i:after {
-            content: '\02795';
-            font-style: normal;
-            float: inline-end;
-            margin-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
-        }
-
-        .collapsible.active i:after {
-            content: '\2796';
-            font-style: normal;
-            float: inline-end;
             margin-left: 10px;
-            font-size: 20px;
         }
 
-    .workContent {
-        display: none;
-        float: inline-start;
-        width: 100%;
-        background-color: white;
-        border-radius: 10px;
-        overflow: hidden;
-        color: black;
-        margin-top: 0px;
-        margin-bottom: 20px;
-    }
-
-        .workContent h5 {
-            float: inline-end;
-            margin-right: 10px;
-            margin-top: 0px;
-            background-color: transparent;
-            font-size: 25px;
+        .footer-content i {
+            font-size: 30px;
         }
 
-        .workContent ol {
-            list-style-type: decimal;
-            margin-top: 0px;
-            margin-bottom: 5px;
-            /*font-size: 20px;*/
-            background-color: transparent;
-        }
 
-            .workContent ol li {
-                background-color: transparent;
-                font-size: 25px;
-            }
 
-            .workContent ol ul {
-                list-style-type: circle;
-                margin-top: 0px;
-                background-color: transparent;
-                line-height: 1.5;
-            }
-            .workContent ol b {
-                background-color: transparent;
-            }
-            .workContent ol i {
-                background-color: transparent;
-            }
-            .workContent ol ul li {
-                /*background-color: transparent;*/
-                font-size: 20px;
-            }
 
-    .skills-content {
-        background-color: transparent;
-    }
-
-        .skills-content p {
-            margin-left: 100px;
-            color: black;
-            margin-top: 5px;
-            margin-bottom: 0px;
-        }
-
-    .skills-tab {
-        margin-left: 100px;
-        width: 80%;
-        background-color: grey;
-    }
-
-    .skills {
-        margin-top: 0px;
-        text-align: right;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .PowerBI {
-        width: 85%;
-        background-color: red
-    }
-
-    .python {
-        width: 75%;
-        background-color: orange
-    }
-    .R {
-        width: 65%;
-        background-color: yellow
-    }
-
-    .SQL {
-        width: 60%;
-        background-color: green;
-    }
-
-    .HTML {
-        width: 50%;
-        background-color:deepskyblue;
-    }
-
-    .contactgrid {
-        display: grid;
-        /*float: right;*/
-        /*flex-direction: row;
-        flex-wrap: wrap;*/
-        grid-template-rows: 1fr 2fr;
-        width: 100%;
-        color: black;
-        /*border-radius: 100px;*/
-        text-align: center;
-        /*align-items: center;*/
-        /*background-color: blue;*/
-    }
-    .imagecontact {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        margin-top: 50px;
-        height: 25%;
-        background-color:transparent;
-        margin-bottom:0px;
-        /*border-radius:20px;*/
-    }
-    .image {
-        margin-top: 10px;
-        margin-left:10px;
-        width: 150px;
-        height: 200px;
-    }
-    .image img {
-        width:150px;
-        height:200px;
-    }
-    .socialbuttons {
-        font-size: 30px;
-        display: grid;
-        grid-template-rows: repeat(3,1fr);
-        float: inline-end;
-        background-color: transparent;
-        text-align: left;
-        margin-top:20px;
-        margin-right: 0px;
-        margin-left: 10px;
-    }
-
-        .socialbuttons a {
-            font-size: 22px;
-            background-color: transparent;
-            margin-left: 10px;
-            margin-bottom:0px;
-            color:black;
-        }
-    .aboutMe {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        /*flex-direction: column;*/
-        background-color: navajowhite;
-        text-align: center;
-        /*margin-top: -100px;*/
-        /*background-color:navajowhite;
-        border-radius: 100px;*/
-    }
-
-        .aboutMe h2 {
-            background-color: transparent;
-            text-align: center;
-            font-size: 50px;
-            margin-top: 15px;
-            text-align: center;
-            width: 100%;
-            height: 10%;
-            margin-bottom:0px;
-            /*border-top-right-radius:20px;*/
-        }
-        .aboutMe p {
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-            text-align: left;
-            /*margin-left: 10px;*/
-            font-size: 22px;
-            color: indianred;
-            text-align: left;
-            line-height: 1.5;
-            margin-left: 10px;
-            /*-top: -50px;*/
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-        }
-        .aboutMe b {
-            background-color: transparent;
-        }
 </style>
 <body>
-        <div class="main-content">
-            <div class="contentgrid">
-                <div class="tab">
-                    <button class="floating-button tablinks-work" onclick="openTab('Working')"><i class="fa-solid fa-briefcase"></i>Experience</button>
-                    <button class="floating-button tablinks-edu" onclick="openTab('Educational')"><i class="fa-solid fa-school"></i>Education</button>
-                    <button class="floating-button tablinks-skills" onclick="openTab('Skills')"><i class="fa-solid fa-screwdriver-wrench"></i>Skills</button>
-                    <button class="floating-button tablinks-portfolio" onclick="openTab('Portfolio')"><i class="fa-solid fa-user"></i>Portfolio</button>
-                </div>
-                <script>
-                    const buttons = document.querySelectorAll('.floating-button');
-
-                    buttons.forEach(button => {
-                        button.addEventListener('mouseover', () => {
-                            button.classList.add('float');
-                        });
-                        button.addEventListener('mouseout', () => {
-                            button.classList.remove('float');
-                        });
+    <header>
+        <div class="tab">
+            <button class="floating-button tablinks-portfolio" onclick="openTab('Portfolio')"><i class="fa fa-file"></i>Portfolio</button>
+            <button class="floating-button tablinks-skills" onclick="openTab('Skills')"><i class="fa-solid fa-screwdriver-wrench"></i>Skills</button>
+            <button class="floating-button tablinks-edu" onclick="openTab('Educational')"><i class="fa-solid fa-briefcase"></i>Experience</button>
+            <button class="floating-button tablinks-aboutme" onclick="openTab('AboutMe')"><i class="fa fa-home"></i>About Me</button>
+            <script>const buttons = document.querySelectorAll('.floating-button');
+                const sections = document.querySelectorAll('.tabcontent');
+                buttons.forEach(button => {
+                    button.addEventListener('mouseover', () => {
+                        button.classList.add('floating');
                     });
-                </script>
-                <div id="Portfolio" class="tabcontent">
-                    <h2>Portfolio</h2>
-                    <div class="aboutMe-portfolio">
-                    </div>
-                    <div class="downloadCV">
-                        <a href="https://1drv.ms/b/s!Agp15rBjVn_t5D5M8WnIJn38WjXj?e=ycHRUV" target="_blank"><button class="downloadbtn">Download Resume</button></a>
-                    </div>
-                </div>
-                <div id="Educational" class="tabcontent">
-                    <h2>Educational Background</h2>
-                    <div class="flip-container">
-                        <div class="flip-master">
-                            <div class="flip-master-inner">
-                                <div class="flip-master-front">
-                                    <h3>MSc Data Science and Analytics</h3>
-                                </div>
-                                <div class="flip-master-back">
-                                    <p>
-                                        Universiti Sains Malaysia<br />
-                                        2022 Apr - 2023 Aug<br />
-                                        CGPA: 3.76/4.00
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flip-uni">
-                            <div class="flip-uni-inner">
-                                <div class="flip-uni-front">
-                                    <h4>
-                                        Bachelor of Science (Chemistry)
-                                    </h4>
-                                </div>
-                                <div class="flip-uni-back">
-                                    <p>
-                                        National Tsing Hua University<br />
-                                        2015 Sep – 2019 June<br />
-                                        CGPA: 4.02/4.30
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flip-stpm">
-                            <div class="flip-stpm-inner">
-                                <div class="flip-stpm-front">
-                                    <h4>
-                                        Diploma - Science (Chemistry & Physics)
-                                    </h4>
-                                </div>
-                                <div class="flip-uni-back">
-                                    <p>
-                                        SMK Methodist Boys School<br />
-                                        2013 May – 2014 Nov<br />
-                                        CGPA: 3.5/4.00
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="Working" class="tabcontent">
-                    <h2>Working Experience</h2>
-                    <div class="collapsible-content">
-                        <button class="collapsible PAH" onclick="toggleContent('PAH')">IT Project Executive<i>2023 Sep - Present</i></button>
-                        <div id="PAH" class="workContent">
-                            <h5>
-                                Penang Adventist Hospital
-                            </h5>
-                            <ol>
-                                <li>
-                                    <b>Project Management</b>
-                                </li>
-                                <ul>
-                                    <li>
-                                        Conduct business requirement study and gap analysis.
-                                    </li>
-                                    <li>
-                                        Coordinate meetings between vendors and key users to facilitate project execution.
-                                    </li>
-                                    <li>
-                                        Ensure hardware and software readiness for system implementation.
-                                    </li>
-                                    <li>
-                                        Conduct thorough investigation and analysis of reported system issues.
-                                    </li>
-                                    <li>
-                                        Proactively communicate and follow up with vendors to resolve outstanding issues.
-                                    </li>
-                                    <li>
-                                        Conduct pre-GOLIVE system training and post-GOLIVE system support.
-                                    </li>
-                                </ul>
-                                <li>
-                                    <b>System Testing</b>
-                                </li>
-                                <ul>
-                                    <li>
-                                        Design test script according to system requirements and interface scope
-                                    </li>
-                                    <li>
-                                        Conduct system integration testing (SIT) and user acceptance testing (UAT).
-                                    </li>
-                                    <li>
-                                        Document and follow up testing outcomes to address system issues
-                                    </li>
-                                    <li>
-                                        Collaborate closely with vendors, developers to ensure comprehensive test coverage.
-                                    </li>
-                                    <li>
-                                        Identify opportunities to enhance system functionality.
-                                    </li>
-                                </ul>
-
-                            </ol>
-                        </div>
-
-                        <button class="collapsible" onclick="toggleContent('Lumileds')">Reliability Engineer<i>2022 Aug - 2023 Aug</i></button>
-                        <div id="Lumileds" class="workContent">
-                            <h5>
-                                Lumileds Malaysia Sdn. Bhd.
-                            </h5>
-                            <ol>
-                                <li>
-                                    <b>Reliability Analysis</b>
-                                </li>
-                                <ul>
-                                    <li>
-                                        Proficiently analyze and interpret test data under diverse reliability stress conditions.
-                                    </li>
-                                    <li>
-                                        Collaborate seamlessly with cross-functional teams to assess the robustness of both products and processes.
-                                    </li>
-                                    <li>
-                                        Take complete ownership of ensuring the timely publication of comprehensive Reliability reports.
-                                    </li>
-                                    <li>
-                                        Drive innovation by creating and enhancing automated data analysis methods with programming skills
-                                    </li>
-                                    <li>
-                                        Create and enhance automated data analysis method with programming skills
-                                    </li>
-                                </ul>
-                                <li>
-                                    <b>Project Management</b>
-                                </li>
-                                <ul>
-                                    <li>
-                                        Provide effective oversight of hardware and chemical sourcing, ensuring the smooth execution of projects.
-                                    </li>
-                                    <li>
-                                        Facilitate clear and efficient communication with external labs, managing seamless shipment arrangements.
-                                    </li>
-                                    <li>
-                                        Actively engage in customer audit activities, demonstrating unwavering commitment to achieving audit closure.
-                                    </li>
-                                    <li>
-                                        Identify areas for improvement and take proactive measures to minimize process gaps.
-                                    </li>
-                                    <li>
-                                        Generate and implement Operating Instructions and corrective actions to optimize processes effectively.
-                                    </li>
-                                    <li>
-                                        Develop insightful Power BI dashboards for visualizing and tracking Engineers' Key Performance Indicators (KPIs).
-                                    </li>
-                                </ul>
-                            </ol>
-                        </div>
-                        <button class="collapsible" onclick="toggleContent('Zhulian')">Quality Control Assistant Officer<i>2019 Sep - 2022 Aug</i></button>
-                        <div id="Zhulian" class="workContent">
-                            <h5>
-                                Amazing Vestrax Sdn. Bhd.
-                            </h5>
-                            <ol>
-                                <li>
-                                    <b>Quality control </b>
-                                </li>
-                                <ul>
-                                    <li>
-                                        Ensure on-time analyses on products <i>(Raw Material, Packaging Material, Bulk Product, Finished Goods)</i> in line with analytical protocol
-                                    </li>
-                                    <li>
-                                        Data collection and analysis for product quality compliance and
-                                        improvement
-                                    </li>
-                                    <li>
-                                        Root cause analysis for manufacturing incident and implement
-                                        corrective actions
-                                    </li>
-                                    <li>
-                                        Generate Verification Reports and Working Instruction
-                                    </li>
-                                    <li>
-                                        Proactively identify opportunities for process improvement and minimizing operational gaps
-                                    </li>
-                                    <li>
-                                        Participate with internal and external ISO 9001 audit
-                                    </li>
-                                </ul>
-                                <li>
-                                    <b>Research and Development</b>
-                                </li>
-                                <ul>
-                                    <li>
-                                        R&D of new and existing product to meets performance, stability, and specification compliance
-                                    </li>
-                                    <li>
-                                        Developed new test procedures according to products needs
-                                    </li>
-                                </ul>
-                            </ol>
-                        </div>
-                    </div>
-                    <script>function toggleContent(collapsibleId) {
-                            var content = document.getElementsByClassName("workContent");
-                            var collaps = document.getElementsByClassName("collapsible")
-                            var i;
-                            for (var i = 0; i < content.length; i++) {
-                                if (content[i].id === collapsibleId) {
-                                    if (content[i].style.display === "none" || content[i].style.display === "") {
-                                        content[i].style.display = "block";
-                                        collaps[i].classList.add('active');
-                                    } else {
-                                        content[i].style.display = "none";
-                                        collaps[i].classList.remove('active');
-                                    }
-                                }
+                    button.addEventListener('mouseout', () => {
+                        button.classList.remove('floating');
+                    });
+                    button.addEventListener('click', () => {
+                        buttons.forEach(btn => {
+                            btn.classList.remove('active');
+                            btn.classList.remove('underline');
+                        });
+                        button.classList.add('active');
+                        button.classList.add('underline');
+                    });
+                });
+                function highlightButton() {
+                    sections.forEach(section => {
+                        const rect = section.getBoundingClientRect();
+                        if (rect.top >= 0 && rect.top <= window.innerHeight) {
+                            const sectionClass = section.classList[1]; // Assuming the second class is the identifier
+                            const buttonClass = 'floating-button tablinks-' + sectionClass;
+                            const button = document.querySelector('.' + buttonClass);
+                            buttons.forEach(btn => {
+                                btn.classList.remove('active', 'underline');
+                            });
+                            if (button) {
+                                button.classList.add('active', 'underline');
                             }
-                        }</script>
+                        }
+                    });
+                }
+                window.addEventListener('scroll', highlightButton);
+
+                // Initially highlight the button for the first visible section
+                highlightButton();
+
+                const defaultTab = document.querySelector('.tablinks-aboutme');
+                defaultTab.classList.add('active');
+                defaultTab.classList.add('underline');
+            </script>
+        </div>
+    </header>
+    <div class="tabcontent">
+        <div id="AboutMe" class="tabcontent aboutme" style="top:0px;background-color:lightcyan">
+            <h2 style="margin-top:80px">
+                <span style="color:green;"><small>Hello, </small>I'm Chia Yi</span>
+            </h2>
+            <div class="aboutme-content">
+                <div class="image_grad">
+                    <img src="/Users/chiayicy/Projects/Resume/PostGrad.jpg">
                 </div>
-                <div id="Skills" class="tabcontent">
-                    <h2>Skills</h2>
-                    <div class="skills-content">
-                        <p>PowerBI | Tableau</p>
-                        <div class="skills-tab">
-                            <div class="skills PowerBI">85%</div>
+                <div class="aboutme-intro">
+                    <p>
+                        I am a dynamic professional with a <b>Master's in Data Science and Analytics</b> and
+                        a proven track record in utilizing data analysis skills to enhance product quality and streamline processes.<br />
+                        <br />
+                        My expertise lies in conducting <b>root cause analysis and implementing testing, particularly in the domains of quality and reliability.</b><br />
+                        <br />
+                        In my current role as an IT Project Executive in the healthcare industry,
+                        I specialize in seamlessly integrating applications with Health Information Systems (HIS). <br />
+                        Committed to delivering innovative solutions, I am passionate about leverage my data analysis skills and contribute to organizational success.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="Educational" class="tabcontent edu" style="top:0px;background-color:aliceblue">
+            <h2>
+                <span style="color:green;">Education & Work</span>
+            </h2>
+            <div class="vertical-timeline" style="background-color: aliceblue">
+                <ul class="timeline">
+                    <li class="timeline-item">
+                        <div class="timeline-badge">
+                            2014
                         </div>
-                        <p>Phyton</p>
-                        <div class="skills-tab">
-                            <div class="skills python">75%</div>
+                        <div class="timeline-panel-left diploma">
+                            <div class="timeline-edu">
+                                <h4>
+                                    Diploma - Science <br />(Chemistry & Physics)
+                                </h4>
+                                <p>
+                                    <strong>
+                                        SMK Methodist Boys School
+                                        <br />
+                                        CGPA: 3.5/4.00
+                                    </strong>
+                                </p>
+                            </div>
                         </div>
-                        <p>R</p>
-                        <div class="skills-tab">
-                            <div class="skills R">65%</div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-badge">
+                            2019
                         </div>
-                        <p>SQL</p>
-                        <div class="skills-tab">
-                            <div class="skills SQL">60%</div>
+                        <div class="timeline-panel-right zhulian">
+                            <div class="timeline-panel-wrapper">
+                                <h4>
+                                    Quality Control Assistant Officer
+                                </h4>
+                                <p>
+                                    <strong>
+                                        Amazing Vestrax Sdn. Bhd<br />
+                                        2019 Sep - 2022 Aug <br />
+                                    </strong>
+                                    <small>
+                                        As a Quality Control Assistant Officer at a local manufacturing company,
+                                        my responsibilities include ensuring timely analysis and product compliances.
+                                        I conduct root cause analyses for manufacturing incidents and
+                                        identify opportunities for process improvement through data collection and analysis.
+                                        My role also involves participation in both internal and external ISO 9001 audits.
+                                        <br />
+                                        In addition to these responsibilities, I also involved in R&D focusing on developing new products
+                                        and enhance existing ones to improve performance and stability.
+                                        Additionally, I have developed innovative test procedures tailored to meet the specific requirements of each product,
+                                        contributing to our continuous effort.
+                                        <br />
+                                    </small>
+                                </p>
+                            </div>
                         </div>
-                        <p>HTML</p>
-                        <div class="skills-tab">
-                            <div class="skills HTML">50%</div>
+                        <div class="timeline-panel-left degree">
+                            <div class="timeline-edu">
+                                <h4>
+                                    Bachelor of Science (Chemistry)
+                                </h4>
+                                <p>
+                                    <strong>
+                                        National Tsing Hua University<br />
+                                        CGPA: 4.02/4.30
+                                    </strong>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <button class="courses" onclick="openCourse('CHEM')">Key Courses</button>
+                                <div id="CHEM" class="courses-content">
+                                    <ul>
+                                        <li>
+                                            Organic Chemistry
+                                        </li>
+                                        <li>
+                                            Inorganic Chemistry
+                                        </li>
+                                        <li>
+                                            Physical Chemistry
+                                        </li>
+                                        <li>
+                                            Biological Chemistry
+                                        </li>
+                                        <li>
+                                            Analytical Chemistry
+                                        </li>
+                                        <li>
+                                            Mathematics of Chemistry
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-badge">
+                            2022
+                        </div>
+                        <div class="timeline-panel-left master">
+                            <div class="timeline-edu">
+                                <h4>
+                                    MSc Data Science and Analytics
+                                </h4>
+                                <p>
+                                    <strong>
+                                        Universiti Sains Malaysia<br />
+                                        CGPA: 3.76/4.00
+                                    </strong>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <button class="courses" onclick="openCourse('DS')">Key Courses</button>
+                                <div id="DS" class="courses-content">
+                                    <ul>
+                                        <li>
+                                            Machine Learning
+                                        </li>
+                                        <li>
+                                            Text and Speech Analytics
+                                        </li>
+                                        <li>
+                                            Business Intelligence and Decision Analytics
+                                        </li>
+                                        <li>
+                                            Predictive Business Analytics
+                                        </li>
+                                        <li>
+                                            Big Data Storage and Management
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-panel-right lumileds">
+                            <div class="timeline-panel-wrapper">
+                                <h4>
+                                    Reliability Engineer
+                                </h4>
+                                <p>
+                                    <strong>
+                                        Lumileds Malaysia Sdn. Bhd.<br />
+                                        2022 Aug - 2023 Aug <br />
+                                    </strong>
+                                    <small>
+                                        As I pursue my Master's in Data Science and Analytics,
+                                        I've taken on the role of a Reliability Engineer,
+                                        leading reliability testing for two projects across R&D and production phases.
+                                        This involves overseeing hardware and chemical sourcing,
+                                        as well as ensuring clear communication with external labs for testing activities.
+                                        I've actively participated in customer audits to ensure quality and reliability compliance.
+                                        Moreover, I continuously identify areas for improvement and implement proactive measures to minimize process gaps.
+                                        For instance, I successfully reduced the time taken for manual test sample allocation
+                                        from 1 working day to just 30 minutes through scripting.
+                                        This script generates test sample allocations for each test procedure based on user-defined test periods.
+                                        Additionally, I analyze and interpret test data under various reliability stress conditions,
+                                        collaborating with cross-functional teams to assess product and process robustness.
+                                        In driving innovation in reliability analysis, I've enhanced an existing script
+                                        to accommodate more test scenarios and developed a new test script using Python for the LM80 test case,
+                                        showcasing my proficiency in programming and commitment to improving testing efficiency and accuracy.
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-badge">
+                            2023
+                        </div>
+                        <div class="timeline-panel-right adventist">
+                            <div class="timeline-panel-wrapper">
+                                <h4>
+                                    IT Project Executive
+                                </h4>
+                                <p>
+                                    <strong>
+                                        Penang Adventist Hospital<br />
+                                        2023 Sep - Present <br />
+                                    </strong>
+                                    <small>
+                                        After completing my Master's in Data Science and Analytics,
+                                        I transitioned to the field of IT and secured a position as an IT Project Executive in the healthcare sector.
+                                        My primary focus is to ensure the seamless integration of various systems with the Hospital Information System (HIS)
+                                        to improve current workflows in accordance with the organization's objectives.
+                                        To facilitate smooth project implementation, I conduct business requirement studies and gap analyses,
+                                        coordinate meetings between vendors and stakeholders to ensure alignment,
+                                        and collaborate closely with system vendors and developers to ensure comprehensive test coverage.
+                                        Within 7 months of joining, I successfully implemented two system interfaces with HIS.
+                                        Additionally, I handle pre-GOLIVE system training and provide post-GOLIVE system support.
+                                        In terms of system testing, I design test scripts according to system requirements and interface scope,
+                                        and then conduct system integration testing (SIT) and user acceptance testing (UAT).
+                                        I also document and follow up on testing outcomes to address system issues,
+                                        conduct thorough investigations and analyses of reported system issues,
+                                        and identify opportunities to enhance system functionality.
+                                        Moreover, I successfully expedited the closure of 80% of pending items from vendors since the HIS GO LIVE in 2022,
+                                        primarily focusing on extracting reports from the HIS.
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script>function openCourse(courseId) {
+                const courseContent = document.getElementById(courseId);
+                if (courseContent) {
+                    if (courseContent.style.display === 'block') {
+                        courseContent.style.display = 'none';
+                    } else {
+                        courseContent.style.display = 'block';
+                    }
+                }
+            }</script>
+        <div id="Skills" class="tabcontent skills" style="top:750px;">
+            <h2>
+                <span style="color:green">Skills</span>
+            </h2>
+            <div class="skills-content">
+                <div class="visualization">
+                    <div class="code PowerBI">
+                        <span>PowerBI</span>
+                    </div>
+                    <div class="code Tableau">
+                        <span>Tableau</span>
+                    </div>
+                </div>
+                <div class="coding">
+                    <div class="sql-r">
+                        <div class="code sql">
+                            <span>
+                                SQL
+                            </span>
+                        </div>
+                        <div class="r-html">
+                            <div class="code R">
+                                <span>
+                                    R
+                                </span>
+                            </div>
+                            <div class="code html">
+                                <span>
+                                    HTML
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-python">
+                        <span>
+                            Python
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-        <script>function openTab(tabId) {
-                var tabContents = document.querySelectorAll('.tabcontent');
-                tabContents.forEach(function (content) {
-                    content.classList.remove('active');
-                })
-
-                var selectedTab = document.getElementById(tabId);
-                selectedTab.classList.add('active');
-
-                var alltab = document.querySelectorAll('.tablinks');
-                alltab.forEach(function (tab) {
-                    tab.classList.remove('active');
-                })
-            }
-            openTab('Working')</script>
-
-        <div class="contactgrid">
-            <div class="imagecontact">
-                <div class="image">
-                    <img src="OoiChiaYi.jpg">
-                </div>
-                <div class="socialbuttons">
-                    <i class="fa-solid fa-phone" style="background-color:transparent;color:black"><a>+601136000525</a></i>
-                    <i class="fa-solid fa-envelope" style="background-color:transparent;color:black"><a href="mailto:chiayicyooi@gmail.com">chiayicyooi@gmail.com</a></i>
-                    <i class="fa-brands fa-linkedin" style="background-color:transparent;color:black">
-                        <a href="https://www.linkedin.com/in/chiayi-ooi-95561018a/" target="_blank">Click me to connect</a>
-                    </i>
-                </div>
-            </div>
-            <div class="aboutMe">
-                <h2>About Me</h2>
-                <p>
-                    I am a dynamic professional with a <b>Master's in Data Science and Analytics</b> and
-                    a proven track record in utilizing data analysis skills to enhance product quality and streamline processes.<br />
-                    <br />
-                    My expertise lies in conducting <b>root cause analysis and implementing testing, particularly in the domains of quality and reliability.</b><br />
-                    In my current role as an IT Project Executive in the healthcare industry,
-                    I specialize in seamlessly integrating applications with Health Information Systems (HIS). <br />
-                    <br />
-                    Committed to delivering innovative solutions, I am passionate about leverage my data analysis skills and contribute to organizational success.
-                </p>
-            </div>
+        <div id="Portfolio" class="tabcontent portfolio" style="top:500px;background-color:beige">
+            <h2>
+                <span style="color:green;">Portfolio</span>
+            </h2>
+            <a href="https://1drv.ms/b/s!Agp15rBjVn_t5D5M8WnIJn38WjXj?e=ycHRUV" target="_blank"><button class="downloadbtn">Download Resume</button></a>
         </div>
+        <footer class="tabcontent footer">
+            <div class="footer-content">
+                <i class="fa-solid fa-phone" style="background-color:transparent;color:black"><a>+601136000525</a></i>
+                <i class="fa-solid fa-envelope" style="background-color:transparent;color:black"><a href="mailto:chiayicyooi@gmail.com">chiayicyooi@gmail.com</a></i>
+                <i class="fa-brands fa-linkedin" style="background-color:transparent;color:black">
+                    <a href="https://www.linkedin.com/in/chiayi-ooi-95561018a/" target="_blank">Click me to connect</a>
+                </i>
+            </div>
+        </footer>
+        <script>window.addEventListener('scroll', function () {
+                var scrollHeight = document.documentElement.scrollHeight;
+                var scrollTop = document.documentElement.scrollTop;
+                var clientHeight = document.documentElement.clientHeight;
+
+                if (scrollTop + clientHeight >= scrollHeight) {
+                    document.querySelector('.footer').classList.add('show');
+                } else {
+                    document.querySelector('.footer').classList.remove('show');
+                }
+            });</script>
+
+    </div>
+
+    <script>function openTab(tabId) {
+                var tabContents = document.querySelectorAll('.tabcontent');
+            tabContents.forEach(function (content) {
+                content.classList.remove('active');
+                });
+
+            var selectedTab = document.getElementById(tabId);
+            selectedTab.classList.add('active');
+
+            var alltab = document.querySelectorAll('.floating-button');
+            alltab.forEach(function (tab) {
+                tab.classList.remove('active');
+                });
+            var nextSection = selectedTab;
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            openTab('AboutMe')</script>
+
 </body>
 </html>
