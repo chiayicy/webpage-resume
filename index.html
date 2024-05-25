@@ -76,7 +76,7 @@
         height: 100%;
         border: none;
         margin-right: 0px;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
         .floating-button.underline {
@@ -131,6 +131,7 @@
     .aboutme-content {
         display: grid;
         grid-template-columns: 1fr 2fr;
+        margin-top:10px;
     }
 
     .image_grad {
@@ -337,6 +338,7 @@
             font-size: 18px;
             font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
             color: brown;
+            margin-left:20px;
         }
 
     .skills-content {
@@ -370,7 +372,7 @@
     }
     .Tableau {
         background-color: blanchedalmond;
-        font-size: 50px;
+        font-size: 60px;
         text-align: center;
         align-content: center;
     }
@@ -407,7 +409,7 @@
         text-align: center;
         align-content: center;
         font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        font-size: 100px;
+        font-size: 150px;
         border-radius: 50px;
         -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
@@ -479,8 +481,10 @@
             <button class="floating-button tablinks-skills" onclick="openTab('Skills')"><i class="fa-solid fa-screwdriver-wrench"></i>Skills</button>
             <button class="floating-button tablinks-edu" onclick="openTab('Educational')"><i class="fa-solid fa-briefcase"></i>Experience</button>
             <button class="floating-button tablinks-aboutme" onclick="openTab('AboutMe')"><i class="fa fa-home"></i>About Me</button>
-            <script>const buttons = document.querySelectorAll('.floating-button');
+            <script>
+                const buttons = document.querySelectorAll('.floating-button');
                 const sections = document.querySelectorAll('.tabcontent');
+
                 buttons.forEach(button => {
                     button.addEventListener('mouseover', () => {
                         button.classList.add('floating');
@@ -497,41 +501,60 @@
                         button.classList.add('underline');
                     });
                 });
+
+
                 function highlightButton() {
-                    sections.forEach(section => {
-                        const rect = section.getBoundingClientRect();
-                        if (rect.top >= 0 && rect.top <= window.innerHeight) {
-                            const sectionClass = section.classList[1]; // Assuming the second class is the identifier
-                            const buttonClass = 'floating-button tablinks-' + sectionClass;
-                            const button = document.querySelector('.' + buttonClass);
-                            buttons.forEach(btn => {
-                                btn.classList.remove('active', 'underline');
-                            });
-                            if (button) {
-                                button.classList.add('active', 'underline');
-                            }
-                        }
-                    });
+                    const scrollY = window.scrollY;
+                    const positions = {
+                        aboutme: 0,
+                        edu: 500,
+                        skills: 2000,
+                        portfolio: 2500
+                    };
+
+                    if (scrollY >= positions.portfolio) {
+                        setActiveButton('tablinks-portfolio');
+                    } else if (scrollY >= positions.skills) {
+                        setActiveButton('tablinks-skills');
+                    } else if (scrollY >= positions.edu) {
+                        setActiveButton('tablinks-edu');
+                    } else if (scrollY >= positions.aboutme) {
+                        setActiveButton('tablinks-aboutme');
+                    }
                 }
+                function setActiveButton(className) {
+                    buttons.forEach(btn => {
+                        btn.classList.remove('active', 'underline');
+                    });
+                    const button = document.querySelector('.' + className);
+                    if (button) {
+                        button.classList.add('active', 'underline');
+                    }
+                }
+
+
                 window.addEventListener('scroll', highlightButton);
 
                 // Initially highlight the button for the first visible section
                 highlightButton();
 
+                // Set the default tab as active if no sections are in view
                 const defaultTab = document.querySelector('.tablinks-aboutme');
-                defaultTab.classList.add('active');
-                defaultTab.classList.add('underline');
+                if (!document.querySelector('.floating-button.active')) {
+                    defaultTab.classList.add('active');
+                    defaultTab.classList.add('underline');
+                }
             </script>
         </div>
     </header>
     <div class="tabcontent">
         <div id="AboutMe" class="tabcontent aboutme" style="top:0px;">
-            <h2 style="margin-top:80px">
+            <h2 style="margin-top:100px">
                 <span style="color:green;"><small>Hello, </small>I'm Chia Yi</span>
             </h2>
             <div class="aboutme-content">
                 <div class="image_grad">
-                    <img src="PostGrad_AboutMe.jpg">
+                    <img src="/Users/chiayicy/Projects/Resume/PostGrad copy.jpg">
                 </div>
                 <div class="aboutme-intro">
                     <p>
@@ -554,9 +577,9 @@
                 </div>
             </div>
         </div>
-        <div id="Educational" class="tabcontent edu" style="top:0px;">
+        <div id="Educational" class="tabcontent edu">
             <h2>
-                <span style="color:green;">Education & Work</span>
+                <span style="color: green;">Education & Work</span>
             </h2>
             <div class="vertical-timeline">
                 <ul class="timeline">
@@ -772,7 +795,7 @@
                     }
                 }
             }</script>
-        <div id="Skills" class="tabcontent skills" style="top:750px;">
+        <div id="Skills" class="tabcontent skills" style="margin-top:750px;">
             <h2>
                 <span style="color:green">Skills</span>
             </h2>
@@ -813,7 +836,7 @@
                 </div>
             </div>
         </div>
-        <div id="Portfolio" class="tabcontent portfolio" style="top:500px;">
+        <div id="Portfolio" class="tabcontent portfolio" style="top:0px;">
             <h2>
                 <span style="color:green;">Portfolio</span>
             </h2>
