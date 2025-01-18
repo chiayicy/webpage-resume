@@ -97,17 +97,20 @@
         transform: translateY(-10px);
     }
 
-    .tabcontent {
-        min-width: 100vw;
-        height: 100vh;
+   .tabcontent {
+        /* min-width: 100vw; */
+        /* height: 100vh; */
+         /* margin:0; */
+        /* padding:0; */
+        width: 100%;
+        height:100%;
         position: relative;
-        margin:0;
-        padding:0;
+        margin-top: 50px;
     }
         .tabcontent h2 {
             background-color: transparent;
             font-size: 50px;
-            color: black;
+            /* color: black; */
             text-align: center;
             margin-bottom: 20px;
         }
@@ -119,41 +122,51 @@
             font-size: 20px;
             text-align: start;
         }
-
         .tabcontent.active {
             display: block;
         }
-        .aboutme{
-            box-sizing:border-box;
-            width:100%;
-        }
-
-    .aboutme-content {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        margin-top:10px;
+.aboutme {
+    box-sizing: border-box;
+    width: 100%;
     }
 
-    .image_grad {
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
-    }
+.aboutme-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Two columns layout: image and text */
+    align-items: center; /* Vertically aligns content within the row */
+    gap: 20px; /* Adds spacing between the columns */
+    /* margin-top: 10px; */
+    /* padding: 20px; Optional: Adds padding inside the grid */
+}
 
-        .image_grad img {
-            float:right;
-            width: 300px;
-            height: 450px;
-            margin-right: 30px;
-        }
-    .aboutme-intro {
-        background-color: transparent;
-        width: 100%;
-        color: black;
-        text-align: center
-    }
+.image_grad {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    display: flex; /* Ensures alignment if needed inside this container */
+    justify-content: flex-end; /* Aligns image to the right if required */
+    align-items: center; /* Vertically centers the image within its cell */
+}
+
+.image_grad img {
+    max-width: 100%; /* Scales the image responsively */
+    height: auto; /* Maintains aspect ratio */
+    margin-right: 30px; /* Optional: Adds spacing on the right */
+}
+
+.aboutme-intro {
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    padding: 10px; /* Adds spacing inside the text area */
+    overflow-wrap: break-word; /* Prevents text overflow issues */
+}
+
+
     .vertical-timeline {
-        position: absolute
+        position: relative;
+        margin-bottom: 200px;
     }
 
     .timeline {
@@ -240,12 +253,12 @@
             content: " ";
         }
 
-    .timeline-edu {
+     /* .  {
         margin-top: 10px;
         margin-right: 10px;
         color: brown;
         font-size: 20px;
-    }
+    }  */
     .timeline-panel-left h4 {
         color: brown;
         font-size: 20px;
@@ -316,17 +329,18 @@
         text-align: initial;
     }
     .timeline-body button {
-        background-color: lightseagreen;
-        font-size: large;
+        background-color: rgba(48, 168, 108, 0.712);
         width: 100%;
         cursor: pointer;
         color: white;
         border: none;
+        font-size: 18px;
+        font-family:'Times New Roman', Times, serif;
     }
 
         .timeline-body button:hover {
-            background-color: gold;
-            color: red;
+            background-color: rgba(255, 217, 0, 0.706);
+            color: maroon;
         }
 
     .courses-content {
@@ -346,79 +360,167 @@
         padding-left: 10px;
         padding-right: 10px;
         position:relative;
+        display:flex;
+        gap:50px;
+        flex-direction: row;
+        margin-bottom: 150px;
     }
     .skills-content span{
         background-color:transparent;
     }
 .visualization{
-    display:grid;
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+    flex:1;
+    border:2px dotted;
+    border-color:burlywood;
+    padding:20px;
+    border-radius: 30px;
+    -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.175);
+    display: inline-block;
+    /* justify-content: center; */
+    /* align-items: center;
+    text-align: center; */
+    /* display:grid;
     grid-template-columns:2fr 1fr;
-    grid-gap:10px;
+    grid-gap:10px; */
 }
+.visualization i{
+    font-size: 30px;
+}
+
     .code {
         padding: 20px;
-        border-radius: 30px;
+        border-radius: 10px;
         font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
         text-align: center;
         margin-bottom: 20px;
+        color: black;
+        font-size: 30px;
         -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.175);
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.175);
     }
     .PowerBI {
-        background-color: darkkhaki;
-        color: white;
-        font-size: 80px;
-        border-radius: 40px;
+        margin-top: 30px;
+        background-color: rgba(123, 217, 243, 0.572);
+        
     }
     .Tableau {
-        background-color: blanchedalmond;
-        font-size: 60px;
-        text-align: center;
-        align-content: center;
+        margin-top: 30px;
+        background-color: rgba(127, 173, 174, 0.308);
+        /* text-align: center;
+        align-content: center; */
     }
-    .coding {
+.coding {
+    flex:2;
+    border: 2px dotted;
+    border-color:burlywood;
+    padding:20px;
+    border-radius: 30px;
+    -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.175);
+    /* display:grid;
+    /* display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top:0px;
+    grid-gap:10px; */
+    }
+    .coding i{
+        font-size: 30px;
+    }
+    .coding-skills{
+        margin-top: 30px;
         display: grid;
-        grid-template-columns: 1fr 2fr;
-        margin-top:0px;
-        grid-gap:10px;
+        grid-template-columns: repeat(2,1fr);
+        gap:20px;
+        border-radius: 10px;
     }
-    .sql-r {
+    
+    /* .sql-r {
         display: grid;
         grid-template-rows: repeat(2,1fr);
         grid-gap: 0px;
         font-size: 30px;
-    }
+    } */
     .sql {
-        background-color: blanchedalmond;
+        background-color: rgb(239, 246, 153);
     }
     .R {
-        background-color: blanchedalmond;
+        background-color: rgb(174, 216, 165);
     }
-    .r-html {
+    /* .r-html {
         display: grid;
         grid-template-columns: repeat(2,1fr);
         grid-gap: 10px;
-    }
+    } */
     .html {
-        background-color: blanchedalmond;
+        background-color: rgb(174, 216, 165);
     }
 
-    .code-python {
-        background-color: darkkhaki;
-        color: white;
-        text-align: center;
-        align-content: center;
-        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        font-size: 150px;
-        border-radius: 50px;
-        -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-    }
-        .portfolio{
+    .python {
+        background-color: rgb(239, 246, 153);
+   }
+        .portfolio {
             text-align:center;
         }
+        .projects {
+        position: relative;
+        display: flex;
+        gap: 50px;
+        /* display:grid;
+        grid-template-columns: 1fr 1fr; */
+        text-align: left;
+    }
+    .projectsTitle{
+        margin-left: 20px;
+        text-wrap: nowrap;
+    }
 
-        .portfolio button {
+    .projectsTitle a{
+        color:rgba(26, 64, 202, 0.827);
+        text-decoration: underline;
+        opacity: 0.9;
+    }
+
+    .projectsTitle a.active{
+        color:maroon;
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 25px;
+        /* -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.16);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.16); */
+    }
+    .projectsTitle a:hover{
+        color:rgb(222, 125, 14)
+    }
+   
+    .projects ul{
+        margin-bottom: 10px;
+    }
+
+    .projectDetails{
+        /* border: 1.5px dotted; */
+        border-color: rgba(0, 21, 255, 0.82);
+        padding: 20px;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 60px 100px rgba(0, 0, 0, 0.16);
+        box-shadow: 10px 6px 30px rgba(3, 3, 3, 0.323);
+    }
+    
+    .projectDetails div{
+        text-align: left;
+        color:black;
+        display: none;
+        line-height: 1.5;
+    }    
+
+    .projectDetails div:first-child{
+        display: block;
+    }
+    
+        /* .portfolio button {
             background-color: palegreen;
             padding:10px 80px;
             border-radius: 50px;
@@ -426,7 +528,7 @@
             cursor: pointer;
             margin-top: 20px;
             font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-        }
+        } */
 
         .downloadCV a {
             background-color: transparent;
@@ -440,21 +542,22 @@
         background-color: lightgray;
         color: white;
         text-align: center;
-        position: fixed;
+        position:fixed;
         height: 10%;
         transition: bottom 0.1s;
         z-index: 1000;
+        bottom:-10%
     }
         .footer.show {
-            bottom: 0;
+            bottom:0;
         }
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(4,1fr);
         grid-gap: 30px;
         background-color: transparent;
         text-align: center;
-        margin-top: 20px;
+        margin-top:20px;
     }
         .footer-content a {
             text-decoration: underline;
@@ -470,16 +573,13 @@
             font-size: 30px;
         }
 
-
-
-
 </style>
 <body>
     <header>
         <div class="tab">
-            <button class="floating-button tablinks-portfolio" onclick="openTab('Portfolio')"><i class="fa fa-file"></i>Portfolio</button>
             <button class="floating-button tablinks-skills" onclick="openTab('Skills')"><i class="fa-solid fa-screwdriver-wrench"></i>Skills</button>
-            <button class="floating-button tablinks-edu" onclick="openTab('Educational')"><i class="fa-solid fa-briefcase"></i>Experience</button>
+            <button class="floating-button tablinks-portfolio" onclick="openTab('Portfolio')"><i class="fa fa-file"></i>Portfolio</button>
+            <button class="floating-button tablinks-exp" onclick="openTab('Experience')"><i class="fa-solid fa-briefcase"></i>Experience</button>
             <button class="floating-button tablinks-aboutme" onclick="openTab('AboutMe')"><i class="fa fa-home"></i>About Me</button>
             <script>
                 const buttons = document.querySelectorAll('.floating-button');
@@ -508,16 +608,17 @@
                     const positions = {
                         aboutme: 0,
                         edu: 500,
-                        skills: 2000,
-                        portfolio: 2500
+                        portfolio: 2000,
+                        skills: 2500,
+                        // portfolio: 2500
                     };
 
-                    if (scrollY >= positions.portfolio) {
-                        setActiveButton('tablinks-portfolio');
-                    } else if (scrollY >= positions.skills) {
+                    if (scrollY >= positions.skills) {
                         setActiveButton('tablinks-skills');
+                    } else if (scrollY >= positions.portfolio) {
+                        setActiveButton('tablinks-portfolio');
                     } else if (scrollY >= positions.edu) {
-                        setActiveButton('tablinks-edu');
+                        setActiveButton('tablinks-exp');
                     } else if (scrollY >= positions.aboutme) {
                         setActiveButton('tablinks-aboutme');
                     }
@@ -531,8 +632,6 @@
                         button.classList.add('active', 'underline');
                     }
                 }
-
-
                 window.addEventListener('scroll', highlightButton);
 
                 // Initially highlight the button for the first visible section
@@ -548,13 +647,13 @@
         </div>
     </header>
     <div class="tabcontent">
-        <div id="AboutMe" class="tabcontent aboutme" style="top:0px;">
-            <h2 style="margin-top:100px">
+        <div id="AboutMe" class="tabcontent aboutme">
+            <h2>
                 <span style="color:green;"><small>Hello, </small>I'm Chia Yi</span>
             </h2>
-            <div class="aboutme-content">
+            <div class="aboutme-content" style="top: 0px;">
                 <div class="image_grad">
-                    <img src="PostGrad_AboutMe.jpg">
+                    <img src="/Users/chiayicy/Projects/Resume/PostGrad copy.jpg">
                 </div>
                 <div class="aboutme-intro">
                     <p>
@@ -577,18 +676,18 @@
                 </div>
             </div>
         </div>
-        <div id="Educational" class="tabcontent edu">
-            <h2>
-                <span style="color: green;">Education & Work</span>
-            </h2>
+        <div id="Experience" class="tabcontent exp" style="top:0px;">
             <div class="vertical-timeline">
+                <h2>
+                    <span style="color: green;">Education & Work</span>
+                </h2>
                 <ul class="timeline">
                     <li class="timeline-item">
                         <div class="timeline-badge">
                             2014
                         </div>
                         <div class="timeline-panel-left diploma">
-                            <div class="timeline-edu">
+                            <div class="">
                                 <h4>
                                     Diploma - Science <br />(Chemistry & Physics)
                                 </h4>
@@ -633,7 +732,7 @@
                             </div>
                         </div>
                         <div class="timeline-panel-left degree">
-                            <div class="timeline-edu">
+                            <div class="">
                                 <h4>
                                     Bachelor of Science (Chemistry)
                                 </h4>
@@ -676,7 +775,7 @@
                             2022
                         </div>
                         <div class="timeline-panel-left master">
-                            <div class="timeline-edu">
+                            <div class="">
                                 <h4>
                                     MSc Data Science and Analytics
                                 </h4>
@@ -794,13 +893,172 @@
                         courseContent.style.display = 'block';
                     }
                 }
-            }</script>
-        <div id="Skills" class="tabcontent skills" style="margin-top:750px;">
+            }
+        </script>
+        <div id="Portfolio" class="tabcontent portfolio">
+            <h2>
+                <span style="color:green">Projects</span>
+            </h2>
+            <div class="projects">
+                <div class="projectsTitle" >
+                    <ul>
+                        <a href ="#insuranceProject" onclick="openProject('insuranceProject', this)">
+                            Integration of Insurance Claims System
+                        </a>
+                    </ul>
+                    <ul>
+                        <a href ="#eSubmissionProject" onclick="openProject('eSubmissionProject', this)">
+                            Integration of Insurance E-submission feature
+                        </a>
+                    </ul>
+                    <ul>
+                        <a href ="#powerBIProject" onclick="openProject('powerBIProject', this)">
+                            DataWarehouse and PowerBI Dashboard Development
+                        </a>
+                    </ul>
+                    <ul>
+                        <a href ="#eInvoiceProject" onclick="openProject('eInvoiceProject', this)">
+                            e-Invoice Deployment
+                        </a>
+                    </ul>
+                    <ul>
+                        <a href ="#staffClaimsProject" onclick="openProject('staffClaimsProject', this)">
+                            Integration of Staff Claims System
+                        </a>
+                    </ul>
+                </div>
+                <div class="projectDetails">
+                    <div class="" id="insuranceProject">
+                        <span style="margin-bottom:10px;">
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Role:</b> Project Team Lead
+                        </span>
+                    </br>
+                        <span>
+                            <b style="color: rgba(14, 78, 81);font-size:larger">Project Summary:</b>
+                                Successfully led the integration of the insurance claims system with the Hospital Information System (HIS) 
+                                using API interfaces. Managed the end-to-end project lifecycle, including planning, execution, 
+                                and stakeholder collaboration, to deliver the system on time and within scope. Oversee the implementation to ensure accurate synchronization of patient biodata, 
+                                visit information, and end-user profiles. 
+                        </br>
+                                <b style="color: rgba(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
+                            </br>
+                                <li>
+                                    Enhanced operational efficientcy by digitalize claims process
+                                </li>
+                                <li>
+                                    Reduced human erros by automated data entry
+                                </li>
+                                <li>
+                                    Improved effieciency and flexibility by streamlined acess for Doctors
+                                </li>
+                                <li>
+                                    Simplified operations by centralized system access
+                                </li>
+                                <li>
+                                    Expedited submission workflow and reduced reliance on physical documentation
+                                </li>
+                        </span>
+                    </div>
+                    <div class="" id="eSubmissionProject">
+                        <span style="margin-bottom:10px;">
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Role:</b> Project Team Lead
+                            </br>
+                        </span>
+                            <span>
+                                <b style="color: rgba(14, 78, 81);font-size:larger">Project Summary:</b>
+                                Led the integration project of insurance bill submission process with the Hospital Information System (HIS) 
+                                using the SFTP method. This implementation streamlined the submission of patient bills to insurance portals, 
+                                ensuring compliance with specific insurance company requirements and improving operational efficiency.  
+                            </br>
+                            </span>
+                    </div>
+                    <div class="" id="powerBIProject">
+                        <span>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Role:</b> Project Team Lead
+                            </br>
+                                <b style="color: rgb(14, 78, 81);font-size:larger">Project Summary:</b>
+                                Led the successful development and deployment of a Data Warehouse and Power BI dashboards 
+                                to centralize organizational data and provide actionable insights. Delivered a solution that improved data accessibility, reduced reporting time, 
+                                and supported strategic decision-making across the organization.
+                                Oversee the end-to-end project lifecycle, including planning, resource allocation, 
+                                stakeholder engagement, and timely delivery aligned with business goals. 
+                        </br>
+                                <b style="color: rgb(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
+                                    <li>
+                                        Oversee development of scalable data warehouse integrated from multiple data sources
+                                    </li>
+                                    <li>
+                                        Oversee development of Power BI Dashboard aligned with project scope
+                                    </li>
+                                    <li>
+                                        Ensured adherence to project milestones by managing resources effectively
+                                    </li>
+                                    <li>
+                                        Conducted regular progress reviews with stakeholders and provided clear communication
+                                    </li>
+                        </span>
+                    </div>
+                    <div class="" id="eInvoiceProject">
+                        <span style="margin-bottom: 10px">
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Role:</b> 
+                            <li>
+                                Project Team Lead <i>(Hospital Information System)</i>
+                            </li>
+                            <li>
+                                Project Team Member <i>(Accounting system)</i>
+                            </li>
+                            </br>
+                        </span>
+                        <span>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Project Summary:</b>
+                            As the Project Lead, successfully managed the deployment of the e-Invoice module, 
+                            ensuring compliance and timely deployment with the implementation timeline mandated by LHDN (Inland Revenue Board of Malaysia). 
+                        </br>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
+                                <li>
+                                    Planned, executed, and monitored UAT to validate system functionality and compliances.
+                                </li>
+                                <li>
+                                    Conducted comprehensive training sessions ensuring a smooth transition.
+                                </li>
+                        </span>
+                    </div>
+                    <div class="" id="staffClaimsProject">
+                        <span>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Role:</b> Project Team Lead
+                            </br>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Project Summary:</b>
+                            As the Project Lead, successfully led the integration of the staff claims system between Zoho Expense and the organization's accounting application. 
+                            The project streamlined the claims process, ensuring seamless data flow and improving financial accuracy. Oversee end-to-end project life cylce and 
+                            ensured deliverables in alignment with organizational goals to optimize the staff claims process.
+                        </br>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
+                                <li>
+                                    Reduced human errors by automated synchronization expense data
+                                </li>
+                                <li>
+                                    Enhanced transparency in expense tracking and reporting with accurate mapping of financial data between systems
+                                </li>
+                                <li>
+                                    Conducted comprehensive User Acceptance Testing (UAT) to validate integration workflows
+                                </li>
+                                <li>
+                                   Organized training sessions for end users to ensure a smooth transition to the integrated system and provided ongoing support post-deployment.
+                                </li>
+                                <li>
+                                    Improved process efficiency such as approval turnaround times, and overall financial reporting accuracy
+                                </li>
+                        </span>
+                    </div>
+                </div>
+        </div>
+        <div id="Skills" class="tabcontent skills" style="top:0px;">
             <h2>
                 <span style="color:green">Skills</span>
             </h2>
             <div class="skills-content">
                 <div class="visualization">
+                    <i class="fa-solid fa-chart-simple"></i>
                     <div class="code PowerBI">
                         <span>PowerBI</span>
                     </div>
@@ -809,13 +1067,15 @@
                     </div>
                 </div>
                 <div class="coding">
-                    <div class="sql-r">
-                        <div class="code sql">
-                            <span>
-                                SQL
-                            </span>
-                        </div>
-                        <div class="r-html">
+                    <i class="fa-solid fa-code"></i>
+                    <div class="coding-skills">
+                        <!-- <div class="sql-r"> -->
+                            <div class="code sql">
+                                <span>
+                                    SQL
+                                </span>
+                            </div>
+                            <!-- <div class="r-html"> -->
                             <div class="code R">
                                 <span>
                                     R
@@ -826,28 +1086,82 @@
                                     HTML
                                 </span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="code-python">
-                        <span>
-                            Python
-                        </span>
-                    </div>
+                            <!-- </div> -->
+                            <div class="code python">
+                                <span>
+                                    Python
+                                </span>
+                            </div>
+                        <!-- </div> -->
+                    </div> 
                 </div>
             </div>
         </div>
-        <div id="Portfolio" class="tabcontent portfolio" style="top:0px;">
+    </div>
+
+<script>
+    function openProject(projectId,element) {
+        // Hide all content
+        const allProjects = document.querySelectorAll('.projectDetails > div');
+        allProjects.forEach(project => {
+            project.style.display = 'none';
+        });
+
+        // Show the selected content
+        const selectedProject = document.getElementById(projectId);
+        if (selectedProject) {
+            selectedProject.style.display = 'block';
+        }
+         // Reset all hyperlinks to default
+        const allLinks = document.querySelectorAll('.projectsTitle a');
+        allLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Highlight the clicked hyperlink
+        if (element) {
+            element.classList.add('active');
+        } else{
+            //if no element is passed, set the first link as active
+            const firstLink = allLinks[0];
+            if (firstLink){
+                firstLink.classList.add('active')
+            }
+        }
+    }
+    //Automatically set the first link and content as active on page load
+    document.addEventListener('DOMContentLoaded',() => {
+        const firstLink = document.querySelector('.projectsTitle a');
+        if (firstLink){
+            const firstProjectId = firstLink.getAttribute('href').substring(1);
+            if (firstProjectId) {
+                openProject(firstProjectId,firstLink)
+            }
+        }
+    });
+</script>
+
+      <!--  <div id="Portfolio" class="tabcontent portfolio" style="top:0px;">
             <h2>
                 <span style="color:green;">Portfolio</span>
             </h2>
-            <a href="https://drive.google.com/file/d/166EzHk1hYnSJfDsPNA3ogCj1qL7lkoLk/view?usp=sharing" target="_blank"><button class="downloadbtn">Download Resume</button></a>
-        </div>
+            <a href="https://drive.google.com/file/d/1-RjMX8lDX1O4KxNw8OOl_6oWjuUmwNtr/view?usp=sharing" target="_blank">
+                <button class="downloadbtn">HealthCare Insurance Analytics</button>
+            </a>
+        </div> -->
         <footer class="tabcontent footer">
             <div class="footer-content">
-                <i class="fa-solid fa-phone" style="background-color:transparent;color:black"><a>+601136000525</a></i>
-                <i class="fa-solid fa-envelope" style="background-color:transparent;color:black"><a href="mailto:chiayicyooi@gmail.com">chiayicyooi@gmail.com</a></i>
+                <i class="fa-solid fa-phone" style="background-color:transparent;color:black">
+                    <a>+601136000525</a>
+                </i>
+                <i class="fa-solid fa-envelope" style="background-color:transparent;color:black">
+                    <a href="mailto:chiayicyooi@gmail.com">chiayicyooi@gmail.com</a>
+                </i>
                 <i class="fa-brands fa-linkedin" style="background-color:transparent;color:black">
                     <a href="https://www.linkedin.com/in/chiayi-ooi-95561018a/" target="_blank">Click me to connect</a>
+                </i>
+                <i class="fa-solid fa-file" style="background-color:transparent;color:black">
+                    <a href="https://drive.google.com/file/d/166EzHk1hYnSJfDsPNA3ogCj1qL7lkoLk/view?usp=sharing" target="_blank">Resume</a>
                 </i>
             </div>
         </footer>
@@ -862,8 +1176,6 @@
                     document.querySelector('.footer').classList.remove('show');
                 }
             });</script>
-
-    </div>
 
     <script>function openTab(tabId) {
                 var tabContents = document.querySelectorAll('.tabcontent');
