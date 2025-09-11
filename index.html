@@ -135,14 +135,14 @@
     display: grid;
     grid-template-columns: 1fr 2fr; /* Two columns layout: image and text */
     align-items: center; /* Vertically aligns content within the row */
-    gap: 20px; /* Adds spacing between the columns */
+    gap: 10px; /* Adds spacing between the columns */
     /* margin-top: 10px; */
     /* padding: 20px; Optional: Adds padding inside the grid */
 }
 
 .image_grad {
     width: 100%;
-    height: auto;
+    height:auto;
     background-color: transparent;
     display: flex; /* Ensures alignment if needed inside this container */
     justify-content: flex-end; /* Aligns image to the right if required */
@@ -150,9 +150,11 @@
 }
 
 .image_grad img {
-    max-width: 100%; /* Scales the image responsively */
+    max-width: 50%; /* Scales the image responsively */
     height: auto; /* Maintains aspect ratio */
     margin-right: 30px; /* Optional: Adds spacing on the right */
+    border-radius: 20px; /* Optional: Rounds the corners of the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0.5, 10); /* Optional: Adds a subtle shadow for depth */
 }
 
 .aboutme-intro {
@@ -654,25 +656,23 @@
             </h2>
             <div class="aboutme-content" style="top: 0px;">
                 <div class="image_grad">
-                    <img src="PostGrad_AboutMe.jpg">
+                    <img src="/Users/chiayicy/Projects/Resume/PostGrad copy.jpg">
                 </div>
                 <div class="aboutme-intro">
                     <p>
-                        I bring a diverse background spanning multiple sectors.
-                        My career began in chemical manufacturing, where I managed quality control and researches.
-                        I then moved to the semiconductor industry, focusing on reliability testing and analysis.
+                        I am a detail-oriented QA and IT professional with hands-on experience in system validation, 
+                        software testing, and interface project implementation across healthcare and manufacturing sectors.
+                        My background spans chemical manufacturing and semiconductor reliability, 
+                        followed by a <b>master’s degree in data science and analytics</b> that led to my current role as an IT Project Executive.
                         <br />
-                        After earning a <b>master's degree in data science and analytics</b>, I transitioned to IT and currently work as an IT Project Executive.
+                        I bring strong analytical skills in <b>test case development, UAT, data validation, and issue resolution</b>, 
+                        and I excel at <b>bridging communication between technical and non-technical teams.</b> 
+                        My expertise includes testing, automation, and system analysis, with a proven record of enhancing system 
+                        functionality and delivering seamless integrations of applications such as HIS and accounting software.
                         <br />
-                        I excel at leveraging data analysis skills to improve product quality and streamline processes, as demonstrated in my previous roles.
+                        I am now seeking a software quality assurance role where I can leverage my testing, automation, 
+                        and project management skills to drive quality and efficiency.
                         <br />
-                        Specializing in <b>testing and root cause analysis</b> within the domains of quality and reliability,
-                        I currently serve as an IT Project Executive in the healthcare sector.
-                        In this role, I focus on <b>managing integration projects</b> to seamlessly incorporate new applications
-                        with existing systems like HIS and accounting software.
-                        <br />
-                        Driven by a commitment to delivering innovative solutions, I am enthusiastic about applying my project management
-                        and data analysis skills to enhance system functionality and contribute to organizational success, ensuring a user-centric experience.
                     </p>
                 </div>
             </div>
@@ -821,7 +821,7 @@
                                         2022 Aug - 2023 Aug <br />
                                     </strong>
                                     <small>
-                                        As I pursue my Master's in Data Science and Analytics,
+                                        As I pursue Master's in Data Science and Analytics,
                                         I've taken on the role of a Reliability Engineer,
                                         <b>leading reliability testing</b> for projects across R&D and production phases.
                                         <br />
@@ -831,7 +831,7 @@
                                         Moreover, I continuously identify areas for improvement and implement proactive measures to minimize process gaps.
                                         <br />
                                         For instance, I successfully <b>reduced the time taken for manual test sample allocation</b>
-                                        from 1 working day to just 30 minutes through scripting.
+                                        by automating the process using Python scripting.
                                         This script generates test sample allocations for each test procedure based on user-defined test periods.
                                         Additionally, I <b>analyze and interpret test data</b> under various reliability stress conditions,
                                         collaborating with cross-functional teams to assess product and process robustness.
@@ -863,20 +863,15 @@
                                         I transitioned to the field of IT and secured a position as an IT Project Executive in the healthcare sector.
                                         <br />
                                         My primary focus is to ensure the seamless <b>integration of various systems</b> with the Hospital Information System (HIS)
-                                        and existing applications to improve current workflows in accordance with the organization's objectives.
-                                        To facilitate smooth project implementation, I conduct <b>business requirement studies and gap analyses,</b>
-                                        coordinate between vendors and stakeholders to ensure alignment,
-                                        and collaborate closely with system developers to ensure comprehensive test coverage.
+                                        and other applications to improve current workflows in accordance with the organization's objectives.
+                                        I lead business requirement studies and gap analyses, coordinate with vendors and stakeholders for alignment, 
+                                        and work closely with system developers to achieve comprehensive test coverage.
                                         <br />
-                                        Within 7 months of joining, I <b>successfully implemented two system interfaces with HIS.</b>
-                                        Additionally, I handle pre-GoLive system training and provide system support.
-                                        In terms of system testing, I <b>design test scripts</b> according to system requirements and interface scope,
-                                        and then conduct system integration testing (SIT) and user acceptance testing (UAT).
+                                        I also deliver pre-GoLive training, provide post-GoLive support, and design detailed test scripts based on system requirements 
+                                        and interface scope. This includes conducting system integration testing (SIT) and user acceptance testing (UAT). 
+                                        In addition, I investigate and analyze reported system issues and identify opportunities to enhance system functionality.
                                         <br />
-                                        I also conduct thorough investigations and analyses of reported system issues,,
-                                        and identify opportunities to enhance system functionality.
-                                        Moreover, I successfully <b>expedited the closure of 80% of pending items</b> from vendors since the HIS project Go Live in 2022,
-                                        primarily focusing on extracting reports from the HIS.
+                                        As of September 2025, I have successfully overseen 7 project go-lives.
                                     </small>
                                 </p>
                             </div>
@@ -904,12 +899,12 @@
                 <div class="projectsTitle" >
                     <ul>
                         <a href ="#insuranceProject" onclick="openProject('insuranceProject', this)">
-                            Integration of Insurance Claims System
+                            CoreAI Insurance Claims System
                         </a>
                     </ul>
                     <ul>
                         <a href ="#eSubmissionProject" onclick="openProject('eSubmissionProject', this)">
-                            Integration of Insurance E-submission feature
+                            Prudential Insurance E-submission interface
                         </a>
                     </ul>
                     <ul>
@@ -919,12 +914,22 @@
                     </ul>
                     <ul>
                         <a href ="#eInvoiceProject" onclick="openProject('eInvoiceProject', this)">
-                            e-Invoice Deployment
+                            e-Invoice module (HIS & ERP)
                         </a>
                     </ul>
                     <ul>
                         <a href ="#staffClaimsProject" onclick="openProject('staffClaimsProject', this)">
-                            Integration of Staff Claims System
+                            Zoho Expense System
+                        </a>
+                    </ul>
+                    <ul>
+                        <a href ="#ZeoniqEinvoiceProject" onclick="openProject('ZeoniqEinvoiceProject', this)">
+                            Zeoniq POS system e-Invoice module
+                        </a>
+                    </ul>
+                    <ul>
+                        <a href ="#SSTenhancementProject" onclick="openProject('SSTenhancementProject', this)">
+                            SST enhancement (HIS)
                         </a>
                     </ul>
                 </div>
@@ -941,12 +946,12 @@
                                 using API interfaces. Managed the end-to-end project lifecycle, including planning, execution, 
                                 and stakeholder collaboration, to deliver the system on time and within scope. Oversee the implementation to ensure accurate synchronization of patient biodata, 
                                 visit information, and end-user profiles. 
-                        </br>
-                        </span>
-                    </br>
-                        <span>
-                                <b style="color: rgba(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
                             </br>
+                            </span>
+                        </br>
+                            <span>
+                                <b style="color: rgba(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
+                            <!-- </br> -->
                                 <li>
                                     Enhanced operational efficientcy by digitalize claims process
                                 </li>
@@ -981,9 +986,9 @@
                     <div class="" id="powerBIProject">
                         <span>
                             <b style="color: rgb(14, 78, 81);font-size:larger">Role:</b> Project Team Lead
-                        </br>
-                        </span>    
-                        </br>
+                        </br>    
+                        </span>
+                    </br>
                         <span>
                                 <b style="color: rgb(14, 78, 81);font-size:larger">Project Summary:</b>
                                 Led the successful development and deployment of a Data Warehouse and Power BI dashboards 
@@ -991,10 +996,10 @@
                                 and supported strategic decision-making across the organization.
                                 Oversee the end-to-end project lifecycle, including planning, resource allocation, 
                                 stakeholder engagement, and timely delivery aligned with business goals. 
-                        </br>
+                            </br>
                         </span>
-                    </br>
-                    <span>
+                            </br>
+                        <span>
                                 <b style="color: rgb(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
                                     <li>
                                         Oversee development of scalable data warehouse integrated from multiple data sources
@@ -1028,13 +1033,21 @@
                         </br>
                         </span>
                     </br>
-                    <span>
+                        <span>
                             <b style="color: rgb(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
                                 <li>
                                     Planned, executed, and monitored UAT to validate system functionality and compliances.
                                 </li>
                                 <li>
+                                    Coordinate with vendors and stakeholders to ensure alignment and timely delivery.
+                                <li>
                                     Conducted comprehensive training sessions ensuring a smooth transition.
+                                </li>
+                                <li>
+                                    Provided ongoing support post-deployment to address any issues and ensure system stability.
+                                </li>
+                                <li>
+                                    Ensured compliance with LHDN regulations and standards.
                                 </li>
                         </span>
                     </div>
@@ -1042,7 +1055,7 @@
                         <span>
                             <b style="color: rgb(14, 78, 81);font-size:larger">Role:</b> Project Team Lead
                             </br>
-                            </span>
+                        </span>
                         </br>
                             <span>
                             <b style="color: rgb(14, 78, 81);font-size:larger">Project Summary:</b>
@@ -1050,9 +1063,9 @@
                             The project streamlined the claims process, ensuring seamless data flow and improving financial accuracy. Oversee end-to-end project life cylce and 
                             ensured deliverables in alignment with organizational goals to optimize the staff claims process.
                         </br>
-                        </span>
+                            </span>
                     </br>
-                    <span>
+                        <span>
                             <b style="color: rgb(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
                                 <li>
                                     Reduced human errors by automated synchronization expense data
@@ -1068,6 +1081,68 @@
                                 </li>
                                 <li>
                                     Improved process efficiency such as approval turnaround times, and overall financial reporting accuracy
+                                </li>
+                        </span>
+                    </div>
+                    <div class="" id="ZeoniqEinvoiceProject">
+                        <span>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Role:</b> Project Team Lead
+                            </br>
+                        </span>
+                        </br>
+                            <span>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Project Summary:</b>
+                            As the Project Lead, successfully led the implementation of e-Invoice feature in Zeoniq POS and RMS system,
+                            ensuring compliance and timely deployment with the implementation timeline mandated by LHDN (Inland Revenue Board of Malaysia).
+                        </br>
+                            </span>
+                    </br>
+                        <span>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
+                                <li>
+                                    Planned, executed, and monitored UAT to validate system functionality and compliances.
+                                </li>
+                                <li>
+                                    Coordinate with vendors and stakeholders to ensure alignment and timely delivery.
+                                <li>
+                                    Conducted comprehensive training sessions ensuring a smooth transition.
+                                </li>
+                                <li>
+                                    Provided ongoing support post-deployment to address any issues and ensure system stability.
+                                </li>
+                                <li>
+                                    Ensured compliance with LHDN regulations and standards.
+                                </li>
+                        </span>
+                    </div>
+                    <div class="" id="SSTenhancementProject">
+                        <span>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Role:</b> Project Team Lead
+                            </br>
+                        </span>
+                        </br>
+                            <span>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Project Summary:</b>
+                            As the Project Lead, successfully led the implementation of SST enhancement in Hospital Information System (HIS),
+                            ensuring compliance and timely deployment with the implementation timeline mandated by Royal Malaysian Customs Department.
+                        </br>
+                            </span>
+                    </br>
+                        <span>
+                            <b style="color: rgb(14, 78, 81);font-size:larger">Key responsibilities and achievements include:</b>
+                                <li>
+                                    Planned, executed, and monitored UAT to validate system functionality and compliances.
+                                </li>
+                                <li>
+                                    Coordinate with vendors and stakeholders to ensure alignment and timely delivery.
+                                <li>
+                                    Conducted comprehensive training sessions ensuring a smooth transition.
+                                </li>
+                                <li>
+                                    Provided ongoing support post-deployment to address any issues and ensure system stability.
+                                </li>
+                                <li>
+                                    Ensured compliance with customs regulations and standards.
                                 </li>
                         </span>
                     </div>
@@ -1182,7 +1257,7 @@
                     <a href="https://www.linkedin.com/in/chiayi-ooi-95561018a/" target="_blank">Click me to connect</a>
                 </i>
                 <i class="fa-solid fa-file" style="background-color:transparent;color:black">
-                    <a href="https://drive.google.com/file/d/166EzHk1hYnSJfDsPNA3ogCj1qL7lkoLk/view?usp=sharing" target="_blank">Resume</a>
+                    <a href="https://drive.google.com/file/d/1tuDX14bBbHtcVQK9CuQxcb3FUzb70bt4/view?usp=sharing" target="_blank">Resume</a>
                 </i>
             </div>
         </footer>
